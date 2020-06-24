@@ -26,21 +26,17 @@ public class SelectInterestedLessonServlet extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		
 		int memberCode = ((Member) request.getSession().getAttribute("loginMember")).getMemberCode();
 		
-		
 		ArrayList<HashMap<String, Object>> list = new LessonService().selectInterest(memberCode);
-		
-		
 		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		
 		new Gson().toJson(list, response.getWriter());
-		
-		
 	}
 
 	

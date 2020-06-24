@@ -1260,7 +1260,8 @@ function removeAllChildNods(el) {
 								var certName = decodeURIComponent(data[i].certName);
 								
 								$certsArea.append("<span class='item-certs' data-clicks='false'>" + certName + "</span>");
-								$certsArea.append("<input type='hidden' class='item-certs-input' data-clicks='false' value='" + data[i].certCode + "'>");
+								$certsArea.append("<input type='hidden' class='item-certs-input' data-clicks='false' value='"
+										+ data[i].certCode + "'>");
 							}
 						},
 						error: function(error) {
